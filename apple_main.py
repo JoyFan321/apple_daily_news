@@ -7,7 +7,7 @@ url = 'https://tw.appledaily.com/hot/daily'
 apple_html = requests.get(url)
 soup_obj = bs4.BeautifulSoup(apple_html.text, 'lxml')
 
-# sort top 10
+# sort top 10 and the rest
 items = soup_obj.find('ul', 'all').find_all('li')
 for item in items:
 	if item.find('div', 'aht_title_num atopred'):
